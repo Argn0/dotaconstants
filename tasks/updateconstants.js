@@ -447,9 +447,8 @@ if (dayDifference >= 14) {
     const date = new Date(patches[patches.length - 1].date)
     patches.push({ name: versionNum.toFixed(2), date: new Date(date.getTime() + 60 * 60 * 24 * 1000 * 14) })
   }
+  fs.writeFileSync('./json/patch.json', JSON.stringify(patches, null, 2))
 }
-fs.writeFileSync('./json/patch.json', JSON.stringify(patches))
-console.log(patches)
 
 // "heropickerdata": "http://www.dota2.com/jsfeed/heropickerdata?l=english",
 // "heropediadata": "http://www.dota2.com/jsfeed/heropediadata?feeds=herodata",
